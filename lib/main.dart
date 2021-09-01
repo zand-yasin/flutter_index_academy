@@ -15,11 +15,63 @@ main() {
       box2 += list[i].toString();
     }
   }
-
   print(box2);
 
-  // runApp(MyApp());
+  // homework convert string to list
+
+//   #variable
+  var harshtek = "hello welcome to the Flutter course!";
+  print(harshtek);
+
+  List<int> list2 = <int>[1, 4, 6];
+
+  print(list2);
+
+  Map<String, dynamic> person = {
+    "id": "a21",
+    "name": "dianna",
+    "class": <String>[
+      "flutter",
+      "mcna",
+    ],
+  };
+
+  print(person);
+  print(person['class'][0]);
+
+//   #ist of map
+  // List<Map<String, int>> person = [
+  //   {'id': 1, 'age': 12},
+  //   {'id': 2, 'age': 30},
+  //   {'id': 3, 'age': 27},
+  // ];
+  // print(person);
+
+// //   #traditonal for
+//   for(var i=0; i<person.length; i++){
+//     print("person of ${person[i]['id']} ids age is ${person[i]['age']}");
+//     }
+
+// //   #forEach new way
+//   person.forEach((item) {
+//     print("person of ${item['id']} ids age is ${item['age']}");
+//   });
+
+// //   #Conditional operator with function
+//   var data;
+
+//   data = ageCheck(22);
+//   print(data);
+//   data = ageCheck(23);
+//   print(data);
+//   data = ageCheck(24);
+//   print(data);
 }
+
+// 1 line function to return a value..
+ageCheck(final age) => age == 22 ? " 22 salla" : "am kasa 22 sall nia!";
+
+// }
 
 // class MyApp extends StatelessWidget {
 //   // This widget is the root of your application.
