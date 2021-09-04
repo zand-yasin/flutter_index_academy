@@ -1,6 +1,11 @@
+import 'package:dartlearning/home.dart';
 import 'package:flutter/material.dart';
 
 main() {
+  // return runApp(MaterialApp(
+  //   home: Home(),
+  // ));
+
   String box = "";
   for (int i = 0; i < 10; i++) {
     if (i % 2 == 0) box += i.toString();
@@ -40,36 +45,40 @@ main() {
   print(person['class'][0]);
 
 //   #ist of map
-  // List<Map<String, int>> person = [
-  //   {'id': 1, 'age': 12},
-  //   {'id': 2, 'age': 30},
-  //   {'id': 3, 'age': 27},
-  // ];
-  // print(person);
+  List<Map<String, int>> person2 = [
+    {'id': 1, 'age': 12},
+    {'id': 2, 'age': 30},
+    {'id': 3, 'age': 27},
+  ];
+  print("-----");
+  // print(person2[0]['age']);
 
 // //   #traditonal for
-//   for(var i=0; i<person.length; i++){
-//     print("person of ${person[i]['id']} ids age is ${person[i]['age']}");
-//     }
+  for (var i = 0; i < person2.length; i++) {
+    print("person of ${person2[i]['id']} ids age is ${person2[i]['age']}");
+  }
 
 // //   #forEach new way
-//   person.forEach((item) {
-//     print("person of ${item['id']} ids age is ${item['age']}");
-//   });
+  person2.forEach((item) {
+    print("person of ${item['id']} ids age is ${item['age']}");
+  });
 
 // //   #Conditional operator with function
-//   var data;
-
-//   data = ageCheck(22);
-//   print(data);
+  String data;
+  data = ageCheck(24);
+  print("here------");
+  print(data);
 //   data = ageCheck(23);
 //   print(data);
 //   data = ageCheck(24);
 //   print(data);
 }
 
+ageCheck(int age) => age == 22 ? "bale 22 salla" : "$age salla 22 sall nia";
+
 // 1 line function to return a value..
-ageCheck(final age) => age == 22 ? " 22 salla" : "am kasa 22 sall nia!";
+
+// ageCheck(final age) => age == 22 ? " 22 salla" : "am kasa 22 sall nia!";
 
 // }
 
