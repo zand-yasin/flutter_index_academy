@@ -183,15 +183,20 @@ class GetRow extends StatelessWidget {
         children: [
           Text(left ?? "ama datay nully bo"),
           Container(
+            alignment: Alignment.centerLeft,
             // color: Colors.amber,
-            width: 100,
+            width: 50,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  right!,
-                  overflow: TextOverflow.ellipsis,
-                  // softWrap: true,
+                // add expanded widget to make sure the text widget takes all of the needed spaces
+                Expanded(
+                  child: Text(
+                    right!,
+                    maxLines: 1,
+                    overflow: TextOverflow.fade,
+                    // softWrap: true,
+                  ),
                 ),
                 Text(
                   "...",
