@@ -33,7 +33,7 @@ class Dashboard extends StatelessWidget {
               width: size!.width,
               height: size!.height * .48,
 
-              // 1. double null safety
+              // 1. double null safrety
               // 2. overflow on text
               // 3. using stack or image memory
 
@@ -111,16 +111,13 @@ class Dashboard extends StatelessWidget {
                     right: "fourth title",
                     height: 10,
                   ),
-                  Divider(
-                    endIndent: 20,
-                    indent: 20,
-                  ),
+                  getLine(),
                   GetRow(
                     left: "4 title",
                     right: "fifth title",
                     height: 10,
                   ),
-                  // getLine(),
+                  getLine(),
                 ],
               ),
             ),
@@ -130,11 +127,12 @@ class Dashboard extends StatelessWidget {
     ));
   }
 
-  Divider getLine() {
-    return Divider(
-      color: Colors.black,
-      endIndent: 20,
-      indent: 20,
+// fixing line breaks, changing divider to container
+  Container getLine() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      height: 1,
+      color: Colors.grey[300],
     );
   }
 
