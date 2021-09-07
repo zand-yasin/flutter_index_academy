@@ -97,16 +97,19 @@ class Dashboard extends StatelessWidget {
                   GetRow(
                     left: "1 title",
                     right: "second title",
+                    height: 10,
                   ),
                   getLine(),
                   GetRow(
                     left: "2 title",
                     right: "third title",
+                    height: 10,
                   ),
                   getLine(),
                   GetRow(
                     left: null,
                     right: "fourth title",
+                    height: 10,
                   ),
                   Divider(
                     endIndent: 20,
@@ -115,6 +118,7 @@ class Dashboard extends StatelessWidget {
                   GetRow(
                     left: "4 title",
                     right: "fifth title",
+                    height: 10,
                   ),
                   // getLine(),
                 ],
@@ -161,19 +165,19 @@ class Dashboard extends StatelessWidget {
 }
 
 class GetRow extends StatelessWidget {
-  GetRow({
-    this.left,
-    this.right,
-  });
-
+  GetRow({this.left, this.right, this.height});
+  double? height;
   String? left;
   String? right;
+  var data;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          // const EdgeInsets.only(left: 20, top: 60, right: 20),
-          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          // const EdgeInsets.symmetric(horizontal: 20, vertical: height ?? 10.0),
+          // if you  put const  you lose the chance to null check like the line above
+          EdgeInsets.symmetric(horizontal: 20, vertical: height ?? 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
