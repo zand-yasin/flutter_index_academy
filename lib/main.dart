@@ -40,6 +40,7 @@ class Dashboard extends StatelessWidget {
                   borderRadius:
                       BorderRadius.only(bottomLeft: Radius.circular(40))),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,17 +69,15 @@ class Dashboard extends StatelessWidget {
                       style: TextStyle(color: Colors.blue[300], fontSize: 25),
                     ),
                   ),
-                  SizedBox(
-                    height: 0,
-                  ),
+                  SizedBox(height: 20),
                   Container(
                     width: 200,
                     margin: EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Ariana Grande",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.white, fontSize: 55),
+                      // textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.white, fontSize: 45),
                     ),
                   ),
                 ],
