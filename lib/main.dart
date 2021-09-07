@@ -32,13 +32,10 @@ class Dashboard extends StatelessWidget {
             Container(
               width: size!.width,
               height: size!.height * .48,
-
-              // 1. double null safrety
-              // 2. overflow on text
-              // 3. using stack or image memory
-
               decoration: BoxDecoration(
-// image: DecorationImage(image: ),
+                  image: DecorationImage(
+                      image: AssetImage('assets/cover.png'),
+                      fit: BoxFit.fitHeight),
                   color: Colors.purple[900],
                   borderRadius:
                       BorderRadius.only(bottomLeft: Radius.circular(40))),
