@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     // home: ,
     builder: (context, wid) {
       return Dashboard();
@@ -16,25 +17,186 @@ main() {
 }
 
 class Dashboard extends StatelessWidget {
+  Size? size; //= MediaQuery.of(context).size.width;
+
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+
     return Scaffold(
-      backgroundColor: Colors.amber[200],
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Dashboard',
-          style: TextStyle(
-              fontSize: 20,
-              letterSpacing: 5,
-              color: Colors.black,
-              fontWeight: FontWeight.w900),
+        body: SafeArea(
+      child: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Container(
+              width: size!.width,
+              height: size!.height * .48,
+
+              // 1. double null safety
+              // 2. overflow on text
+              // 3. using stack or image memory
+
+              decoration: BoxDecoration(
+// image: DecorationImage(image: ),
+                  color: Colors.purple[900],
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(40))),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 12),
+                        child: Icon(Icons.list, color: Colors.white),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 12),
+                        child: Icon(Icons.warning, color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: 20),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Trandin",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.blue[300], fontSize: 25),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 0,
+                  ),
+                  Container(
+                    width: 200,
+                    margin: EdgeInsets.only(left: 20),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Ariana Grande",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.white, fontSize: 55),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * .48,
+              color: Colors.white,
+              child: Column(
+                children: [
+                  getHeader(),
+                  GetRow(
+                    left: "1 title",
+                    right: "second title",
+                  ),
+                  getLine(),
+                  GetRow(
+                    left: "2 title",
+                    right: "third title",
+                  ),
+                  getLine(),
+                  GetRow(
+                    left: null,
+                    right: "fourth title",
+                  ),
+                  Divider(
+                    endIndent: 20,
+                    indent: 20,
+                  ),
+                  GetRow(
+                    left: "4 title",
+                    right: "fifth title",
+                  ),
+                  // getLine(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
-      body: Icon(Icons.ac_unit),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.check),
+    ));
+  }
+
+  Divider getLine() {
+    return Divider(
+      color: Colors.black,
+      endIndent: 20,
+      indent: 20,
+    );
+  }
+
+  Widget getHeader() {
+    return Padding(
+      padding:
+          // const EdgeInsets.only(left: 20, top: 60, right: 20),
+          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "Popular",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+          Text(
+            "Show All",
+            overflow: TextOverflow.clip,
+            style: TextStyle(
+                color: Colors.purple,
+                // fontSize: 30,
+                fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class GetRow extends StatelessWidget {
+  GetRow({
+    this.left,
+    this.right,
+  });
+
+  String? left;
+  String? right;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+          // const EdgeInsets.only(left: 20, top: 60, right: 20),
+          const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(left ?? "ama datay nully bo"),
+          Container(
+            // color: Colors.amber,
+            width: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  right!,
+                  overflow: TextOverflow.ellipsis,
+                  // softWrap: true,
+                ),
+                Text(
+                  "...",
+                  overflow: TextOverflow.clip,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
