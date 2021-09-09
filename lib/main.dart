@@ -1,19 +1,12 @@
 import 'package:dartlearning/ColorChanger.dart';
+import 'package:dartlearning/complexUI.dart';
 import 'package:flutter/material.dart';
 
 main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false, home: ColorChanger(),
-    // builder: (context, wid) {
-    //   return ColorChanger();
+    debugShowCheckedModeBanner: false, home: ComplexUI(),
     // },
   ));
-
-  // runApp(MaterialApp(
-  //   builder: (_, a) {
-  //     return Dashboard();
-  //   },
-  // ));
 }
 
 class Dashboard extends StatelessWidget {
