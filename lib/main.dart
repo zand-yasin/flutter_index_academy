@@ -1,12 +1,12 @@
+import 'package:dartlearning/ColorChanger.dart';
 import 'package:flutter/material.dart';
 
 main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    // home: ,
-    builder: (context, wid) {
-      return Dashboard();
-    },
+    debugShowCheckedModeBanner: false, home: ColorChanger(),
+    // builder: (context, wid) {
+    //   return ColorChanger();
+    // },
   ));
 
   // runApp(MaterialApp(
