@@ -27,94 +27,116 @@ class Dashboard extends StatelessWidget {
         body: SafeArea(
       child: Container(
         color: Colors.white,
-        child: Column(
+        child: Stack(
           children: [
-            Container(
-              width: size!.width,
-              height: size!.height * .48,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/cover.png'),
-                      fit: BoxFit.fitHeight),
-                  color: Colors.purple[900],
-                  borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(40))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 12),
-                        child: Icon(Icons.list, color: Colors.white),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 12),
-                        child: Icon(Icons.warning, color: Colors.white),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 100,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 20),
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Trandin",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.blue[300], fontSize: 25),
+            Positioned(
+              top: 0,
+              child: Container(
+                width: size!.width,
+                height: size!.height * .48,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/cover.png'),
+                        fit: BoxFit.fitHeight),
+                    color: Colors.purple[900],
+                    borderRadius:
+                        BorderRadius.only(bottomLeft: Radius.circular(40))),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 12),
+                          child: Icon(Icons.list, color: Colors.white),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 8, vertical: 12),
+                          child: Icon(Icons.warning, color: Colors.white),
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    width: 200,
-                    margin: EdgeInsets.only(left: 20),
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Ariana Grande",
-                      // textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.white, fontSize: 45),
+                    SizedBox(
+                      height: 100,
                     ),
-                  ),
-                ],
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Trandin",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(color: Colors.blue[300], fontSize: 25),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      width: 200,
+                      margin: EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Ariana Grande",
+                        // textAlign: TextAlign.left,
+                        style: TextStyle(color: Colors.white, fontSize: 45),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * .48,
-              color: Colors.white,
-              child: Column(
-                children: [
-                  getHeader(),
-                  GetRow(
-                    left: "1 title",
-                    right: "second title",
-                    height: 10,
-                  ),
-                  getLine(),
-                  GetRow(
-                    left: "2 title",
-                    right: "third title",
-                    height: 10,
-                  ),
-                  getLine(),
-                  GetRow(
-                    left: null,
-                    right: "fourth title",
-                    height: 10,
-                  ),
-                  getLine(),
-                  GetRow(
-                    left: "4 title",
-                    right: "fifth title",
-                    height: 10,
-                  ),
-                  getLine(),
-                ],
+            Positioned(
+              top: size!.height * .5,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * .48,
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    getHeader(),
+                    GetRow(
+                      left: "1 title",
+                      right: "second title",
+                      height: 10,
+                    ),
+                    getLine(),
+                    GetRow(
+                      left: "2 title",
+                      right: "third title",
+                      height: 10,
+                    ),
+                    getLine(),
+                    GetRow(
+                      left: null,
+                      right: "fourth title",
+                      height: 10,
+                    ),
+                    getLine(),
+                    GetRow(
+                      left: "4 title",
+                      right: "fifth title",
+                      height: 10,
+                    ),
+                    getLine(),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: size!.height * .4,
+              right: 30,
+              child: Container(
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.purple,
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  Icons.play_arrow,
+                  color: Colors.white,
+                  size: 40,
+                ),
               ),
             ),
           ],
@@ -189,12 +211,10 @@ class GetRow extends StatelessWidget {
                     right!,
                     maxLines: 1,
                     overflow: TextOverflow.fade,
-                    // softWrap: true,
                   ),
                 ),
                 Text(
                   "...",
-                  overflow: TextOverflow.clip,
                 ),
               ],
             ),
