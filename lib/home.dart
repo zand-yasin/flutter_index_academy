@@ -1,3 +1,5 @@
+import 'package:dartlearning/providers/user.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -41,10 +43,24 @@ class Home extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Text(
-                            'Transactions',
+                            "title",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            "title".tr(),
                             style: TextStyle(color: Colors.white, fontSize: 25),
                           ),
-                          Icon(Icons.lock_clock, color: Colors.white),
+                          InkWell(
+                              onTap: () {
+                                if (EasyLocalization.of(context)!.locale ==
+                                    Locale('ar', 'SA'))
+                                  EasyLocalization.of(context)!
+                                      .setLocale(Locale('ar', 'IQ'));
+                                else
+                                  EasyLocalization.of(context)!
+                                      .setLocale(Locale('ar', 'SA'));
+                              },
+                              child: Icon(Icons.language, color: Colors.white)),
                         ],
                       ),
                       Container(
