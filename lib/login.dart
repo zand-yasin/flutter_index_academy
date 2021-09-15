@@ -1,4 +1,4 @@
-import 'package:dartlearning/home.dart';
+import 'package:dartlearning/myapp.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -43,7 +43,7 @@ class Login extends StatelessWidget {
                 onPressed: () {
                   if (formGlobalKey.currentState!.validate())
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => Home()));
+                        context, MaterialPageRoute(builder: (_) => MyApp()));
                   else
                     print('unsuccssull');
                 },
