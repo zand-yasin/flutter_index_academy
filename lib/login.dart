@@ -1,8 +1,12 @@
 import 'package:dartlearning/myapp.dart';
+import 'package:dartlearning/providers/user.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatelessWidget {
   final formGlobalKey = GlobalKey<FormState>();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +19,7 @@ class Login extends StatelessWidget {
         child: Column(
           children: [
             TextFormField(
+              controller: email,
               decoration: InputDecoration(labelText: "Email"),
               validator: (email) {
                 if (email != "" && isEmailValid(email!))
@@ -24,6 +29,7 @@ class Login extends StatelessWidget {
               },
             ),
             TextFormField(
+              controller: password,
               decoration: InputDecoration(labelText: "Password"),
               obscureText: true,
               validator: (password) {
@@ -41,10 +47,15 @@ class Login extends StatelessWidget {
             //         child: Text('submit'))),
             ElevatedButton(
                 onPressed: () {
-                  if (formGlobalKey.currentState!.validate())
+                  if (formGlobalKey.currentState!.validate()) {
+                    final userPrvider =
+                        Provider.of<User>(context, listen: false);
+
+                    userPrvider.addEmail(email.text);
+
                     Navigator.push(
                         context, MaterialPageRoute(builder: (_) => MyApp()));
-                  else
+                  } else
                     print('unsuccssull');
                 },
                 child: Text("Submit"))

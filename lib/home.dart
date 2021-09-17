@@ -2,6 +2,7 @@ import 'package:dartlearning/providers/user.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -41,10 +42,6 @@ class Home extends StatelessWidget {
                             Icons.keyboard_backspace,
                             size: 30,
                             color: Colors.white,
-                          ),
-                          Text(
-                            "title",
-                            style: TextStyle(color: Colors.white),
                           ),
                           Text(
                             "title".tr(),

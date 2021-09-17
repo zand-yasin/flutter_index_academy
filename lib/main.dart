@@ -1,24 +1,24 @@
-import 'package:dartlearning/ColorChanger.dart';
-import 'package:dartlearning/complexUI.dart';
-import 'package:dartlearning/home.dart';
 import 'package:dartlearning/login.dart';
+import 'package:dartlearning/providers/user.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:provider/provider.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
   runApp(EasyLocalization(
-    saveLocale: true,
-    path: 'assets/langs',
-    supportedLocales: [
-      Locale("ar", "IQ"),
-      Locale("ar", "SA"),
-    ],
-    child: App(),
-  ));
+      saveLocale: true,
+      path: 'assets/langs',
+      supportedLocales: [
+        Locale("ar", "IQ"),
+        Locale("ar", "SA"),
+      ],
+      child: ChangeNotifierProvider(
+        create: (context) => User(),
+        child: App(),
+      )));
 }
 
 class App extends StatelessWidget {
@@ -29,12 +29,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      debugShowCheckedModeBanner: false,
-      home: Login(),
-      // home: Home(),
-    );
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        debugShowCheckedModeBanner: false,
+        home: Login());
   }
 }
