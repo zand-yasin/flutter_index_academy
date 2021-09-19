@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "990729303810",
+    "project_id": "flutterclass-322a7",
+    "storage_bucket": "flutterclass-322a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990729303810:android:4532ff1320094981d5341b",
+        "android_client_info": {
+          "package_name": "com.example.dartlearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990729303810-86pi5dah7nbubfmibf3mio9b8sm8g54u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dartlearning",
+            "certificate_hash": "540b8a9eb38fe61cebb566970dec369a9aa17900"
+          }
+        },
+        {
+          "client_id": "990729303810-73mnitf126mis05blqu2gjccf4qbg08r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABoD-6rz0YpcXMS4IJDmifUozjVa-iaUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990729303810-73mnitf126mis05blqu2gjccf4qbg08r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
