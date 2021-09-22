@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class User extends ChangeNotifier {
+class UserPrv extends ChangeNotifier {
   String _email = "";
 
   addEmail(String email) {
