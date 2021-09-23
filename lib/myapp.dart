@@ -118,6 +118,39 @@ class MyApp extends StatelessWidget {
                   },
                 ),
               ),
+              Card(
+                child: ListTile(
+                  trailing: Text('add data to firebase'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return AddUser();
+                    }));
+                  },
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  trailing: Text('get data from firebase'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return GetUserName('QM9s5ULdPpfif02aBNwZ');
+                    }));
+                  },
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  trailing: Text('get realtime data from firebase'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return UserInformation();
+                    }));
+                  },
+                ),
+              ),
             ],
           ),
         ),
