@@ -4,11 +4,14 @@ import 'package:dartlearning/api/api.dart';
 import 'package:dartlearning/complexUI.dart';
 import 'package:dartlearning/currencyapi/apicurrency.dart';
 import 'package:dartlearning/dashboard.dart';
+import 'package:dartlearning/football/football.dart';
+import 'package:dartlearning/football2/football2.dart';
 import 'package:dartlearning/getrealtime.dart';
 import 'package:dartlearning/getuser.dart';
 import 'package:dartlearning/home.dart';
 import 'package:dartlearning/login.dart';
 import 'package:dartlearning/providers/user.dart';
+import 'package:dartlearning/userrealtime.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -41,6 +44,39 @@ class MyApp extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Card(
+                child: ListTile(
+                  trailing: Text('get users realtime'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return UserRealtime();
+                    }));
+                  },
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  trailing: Text('football homework'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return Football();
+                    }));
+                  },
+                ),
+              ),
+              Card(
+                child: ListTile(
+                  trailing: Text('football2 homework'),
+                  leading: Icon(Icons.arrow_back_ios),
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return Football2();
+                    }));
+                  },
+                ),
+              ),
               Card(
                 child: ListTile(
                   trailing: Text('Home'),
